@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="background-video">
+            <source src="../Downloads/4006-176282263_medium.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="theme-selector">
+        <button onclick="setTheme('light')">Light</button>
+        <button onclick="setTheme('dark')">Dark</button>
+        <button onclick="setTheme('colorful')">Colorful</button>
+        <button id="audio-button" onclick="toggleAudio()">
+            <img id="audio-icon" src="https://img.icons8.com/ios-filled/50/000000/speaker.png" alt="Audio">
+        </button>
+    </div>
+    <div class="content">
+        <div class="container model3">
+            <h1>My To-Do List</h1>
+            <div class="task-input">
+                <input type="text" id="task" placeholder="Add a new task">
+                <input type="date" id="due-date">
+                <select id="priority">
+                	<option value="">Select Priority</option>
+                    <option value="low">Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+                <input type="text" id="category" placeholder="Category">
+                <button onclick="addTask()">Add Task</button>
+            </div>
+        </div>
+        <div class="task-list">
+            <h2>Tasks</h2>
+            <table id="task-table">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Due Date</th>
+                        <th>Priority</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tasks"></tbody>
+            </table>
+        </div>
+    </div>
+    <audio id="background-audio" loop>
+        <source src="../Downloads/beach-ambience-with-light-waves-and-a-boat-in-the-distance-54794 (1).mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <script src="todo.js"></script>
+</body>
+</html>
